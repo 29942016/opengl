@@ -13,8 +13,8 @@ namespace opengl
 {
     class Game : GameWindow
     {
-        public static int GRIDSIZE = 32,
-                          TILESIZE = 128;
+        public static int GRIDSIZE = 64,
+                          TILESIZE = 16;
 
         private Texture2D _TileSet;
         private View _View;
@@ -51,17 +51,14 @@ namespace opengl
 
                     switch (_Level[x, y].Type)
                     {
-                        case BlockType.Ladder:
-                            source = new RectangleF(2 * TILESIZE, 0 * TILESIZE, TILESIZE, TILESIZE);
-                            break;
-                        case BlockType.LadderPlatform:
-                            source = new RectangleF(3 * TILESIZE, 0 * TILESIZE, TILESIZE, TILESIZE);
-                            break;
                         case BlockType.Solid:
                             source = new RectangleF(1 * TILESIZE, 0 * TILESIZE, TILESIZE, TILESIZE);
                             break;
-                        case BlockType.Platform:
-                            source = new RectangleF(0 * TILESIZE, 1 * TILESIZE, TILESIZE, TILESIZE);
+                        case BlockType.Hover:
+                            source = new RectangleF(2 * TILESIZE, 0 * TILESIZE, TILESIZE, TILESIZE);
+                            break;
+                        case BlockType.Object:
+                            source = new RectangleF(3 * TILESIZE, 0 * TILESIZE, TILESIZE, TILESIZE);
                             break;
                     }
 
@@ -124,8 +121,8 @@ namespace opengl
         {
             base.OnLoad(e);
 
-            _TileSet = ContentPipe.LoadTexture("TileSet1.png");
-            _Level = new Level("Content\\Levels\\TiledLevel.tmx");
+            _TileSet = ContentPipe.LoadTexture("Levels/FF1-16x16.png");
+            _Level = new Level("Content\\Levels\\new.tmx");
             _Player = new Player(new Vector2(_Level.PlayerStartPosition.X + 0.5f, _Level.PlayerStartPosition.Y + 0.5f) * GRIDSIZE);
         }
 

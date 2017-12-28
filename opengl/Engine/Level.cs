@@ -83,22 +83,17 @@ namespace opengl.Engine
 
                         switch (gid)
                         {
-                            case 2:
+                            case 1033:
                                 _Grid[x, y] = new Block(BlockType.Solid, x, y);
                                 break;
-                            case 3:
-                                _Grid[x, y] = new Block(BlockType.Ladder, x, y);
+                            case 210:
+                                _Grid[x, y] = new Block(BlockType.Hover, x, y);
                                 break;
-                            case 4:
-                                _Grid[x, y] = new Block(BlockType.LadderPlatform, x, y);
+                            case 365:
+                                _Grid[x, y] = new Block(BlockType.Object, x, y);
                                 break;
-                            case 5:
-                                _Grid[x, y] = new Block(BlockType.Platform, x, y);
-                                break;
-                            default:
                                 _Grid[x, y] = new Block(BlockType.Empty, x, y);
                                 break;
-
                         }
 
 
@@ -160,8 +155,8 @@ namespace opengl.Engine
         public int Y          { get; private set; }
 
         public bool IsSolid    { get; private set; }
-        public bool IsLadder   { get; private set; }
-        public bool IsPlatform { get; private set; }
+        public bool IsObject   { get; private set; }
+        public bool IsHover { get; private set; }
 
         public Block(BlockType blocktype, int x, int y)
         {
@@ -169,24 +164,20 @@ namespace opengl.Engine
             Y = y;
             Type = blocktype;
 
-            IsLadder = false;
+            IsObject = false;
             IsSolid = false;
-            IsPlatform = false;
+            IsHover = false;
 
             switch (blocktype)
             {
-                case BlockType.Ladder:
-                    IsLadder = true;
+                case BlockType.Object:
+                    IsObject = true;
                     break;
                 case BlockType.Solid:
                     IsSolid = true;
                     break;
-                case BlockType.Platform:
-                    IsPlatform = true;
-                    break;
-                case BlockType.LadderPlatform:
-                    IsPlatform = true;
-                    IsLadder = true;
+                case BlockType.Hover:
+                    IsHover = true;
                     break;
             }
 
@@ -198,9 +189,8 @@ namespace opengl.Engine
     public enum BlockType
     {
         Solid,
-        Empty,
-        Platform,
-        Ladder,
-        LadderPlatform
+        Hover,
+        Object,
+        Empty
     }
 }

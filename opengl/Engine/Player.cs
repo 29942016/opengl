@@ -49,11 +49,17 @@ namespace opengl.Engine
         {
             HandleInput();
 
+            Position.Y += Velocity.Y;
+
             ResolveCollision();
         }
 
         public void HandleInput()
         {
+            if (Input.KeyDown(Key.W))
+                Velocity.Y = -0.2f;
+            else
+                Velocity.Y = 0;
 
         }
 

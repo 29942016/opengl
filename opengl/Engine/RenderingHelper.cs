@@ -35,9 +35,6 @@ namespace opengl.Engine
 
                 bmp.UnlockBits(lockData);
             }
-
-           
-            //GL.Rect(-1, -1, 1, -.90);
         }
     }
 }

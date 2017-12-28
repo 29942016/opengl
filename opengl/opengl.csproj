@@ -62,22 +62,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EmbeddedResource Include="Content\Levels\TiledLevel.tmx">
+    <EmbeddedResource Include="Content\Levels\tmx.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Levels\Level1.txt" />
-    <Content Include="Content\Levels\TiledLevel.xml" />
     <EmbeddedResource Include="Content\player.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\playerClimb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Content\TileSet1.png">
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Levels\FF1-16x16.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
