@@ -1,0 +1,5 @@
+opengl/bin/*
+opengl/obj/*
+/.vs/opengl/v15/.suo
+/.vs/opengl/v15/Server/sqlite3/db.lock
+/.vs/opengl/v15/Server/sqlite3/storage.ide
